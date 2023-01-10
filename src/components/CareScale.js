@@ -1,4 +1,4 @@
-import Light from "../assets/sun.svg";
+import Light from "../assets/light.svg";
 import Water from "../assets/water.svg";
 
 function CareScale({ scaleValue, careType }) {
