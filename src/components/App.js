@@ -2,7 +2,6 @@ import React from "react";
 import Banner from "./Banner";
 import Cart from "./Cart";
 import ShoppingList from "./ShoppingList";
-import QuestionForm from "./QuestionForm";
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
       <Banner />
       <Cart />
       <ShoppingList />
-      <QuestionForm />
     </React.Fragment>
   );
 }
