@@ -1,7 +1,12 @@
 export const plantList = [
-  { id: "1ab", name: "monstera", category: "intérieur" },
-  { id: "2cd", name: "ficus lyrata", category: "extérieur" },
-  { id: "3ef", name: "pothos argenté", category: "extérieur" },
-  { id: "4gh", name: "yucca", category: "intérieur" },
-  { id: "5ij", name: "palmier", category: "extérieur" },
+  { id: "1ab", name: "monstera", category: "intérieur", isBestSale: true },
+  { id: "2cd", name: "ficus lyrata", category: "extérieur", isBestSale: false },
+  {
+    id: "3ef",
+    name: "pothos argenté",
+    category: "extérieur",
+    isBestSale: false,
+  },
+  { id: "4gh", name: "yucca", category: "intérieur", isBestSale: true },
+  { id: "5ij", name: "palmier", category: "extérieur", isBestSale: true },
 ];
