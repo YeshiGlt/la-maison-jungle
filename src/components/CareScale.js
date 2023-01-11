@@ -1,22 +1,29 @@
+import Light from "../assets/light.svg";
 import Water from "../assets/water.svg";
-import Light from "../assets/sun.svg";
-import { useState } from "react";
 
 function CareScale({ scaleValue, careType }) {
   const range = [1, 2, 3];
 
-  const quantityType = {
+  const quantityLW = {
     1: "peu",
-    2: "modérément",
+    2: "modérement",
     3: "beaucoup",
   };
 
   const scaleType =
     careType === "light" ? (
-      <img src={Light} alt="light" />
+      <img src={Light} alt="light-icon" />
     ) : (
-      <img src={Water} alt="water" />
+      <img src={Water} alt="water-icon" />
     );
+
+  function handleClick({ quantityLW, scaleValue, careType }) {
+    alert(
+      `Cette plante requiert ${quantityLW[scaleValue]} ${
+        careType === "light" ? "de lumière" : "d'arrosage"
+      }`
+    );
+  }
 
   return (
     <div
@@ -30,7 +37,12 @@ function CareScale({ scaleValue, careType }) {
     >
       {range.map((rangeElem) =>
         scaleValue >= rangeElem ? (
-          <span key={rangeElem.toString()}>{scaleType}</span>
+          <span
+            key={rangeElem.toString()}
+            onClick={() => handleClick({ quantityLW, scaleValue, careType })}
+          >
+            {scaleType}
+          </span>
         ) : null
       )}
     </div>

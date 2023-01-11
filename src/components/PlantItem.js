@@ -1,5 +1,5 @@
-import "../styles/PlantItem.css";
 import CareScale from "./CareScale";
+import "../styles/PlantItem.css";
 
 function PlantItem({ id, cover, name, water, light }) {
   return (

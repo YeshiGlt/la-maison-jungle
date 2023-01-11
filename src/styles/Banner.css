@@ -9,11 +9,6 @@
   align-items: center;
 }
 
-.lmj-banner-row {
-  display: flex;
-  flex-direction: column;
-}
-
 .lmj-title {
   padding-left: 32px;
 }

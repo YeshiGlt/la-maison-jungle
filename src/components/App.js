@@ -11,6 +11,7 @@ function App() {
       <Banner />
       <Cart />
       <ShoppingList />
+      <QuestionForm />
       <Footer />
     </React.Fragment>
   );
