@@ -1,18 +1,18 @@
 import { plantList } from "../datas/plantList";
-import PlantItem from "./PlantItem";
 import "../styles/ShoppingList.css";
+import PlantItem from "./PlantItem";
 
 function ShoppingList() {
-  const categories = plantList.reduce(
-    (acc, plant) =>
-      acc.includes(plant.category) ? acc : acc.concat(plant.category),
+  const categoriesPlant = plantList.reduce(
+    (nP1, plant) =>
+      nP1.includes(plant.category) ? nP1 : nP1.concat(plant.category),
     []
   );
 
   return (
     <div>
       <ul>
-        {categories.map((cat) => (
+        {categoriesPlant.map((cat) => (
           <li key={cat}>{cat}</li>
         ))}
       </ul>
