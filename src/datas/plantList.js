@@ -8,6 +8,8 @@ export const plantList = [
     cover: monstera,
     light: 2,
     water: 1,
+    price: 15,
+    quantity: 8,
   },
   {
     id: "2cd",
@@ -16,6 +18,8 @@ export const plantList = [
     cover: monstera,
     light: 3,
     water: 2,
+    price: 16,
+    quantity: 9,
   },
   {
     id: "3ef",
@@ -24,6 +28,8 @@ export const plantList = [
     cover: monstera,
     light: 3,
     water: 3,
+    price: 9,
+    quantity: 5,
   },
   {
     id: "4gh",
@@ -32,6 +38,8 @@ export const plantList = [
     cover: monstera,
     light: 1,
     water: 2,
+    price: 12,
+    quantity: 6,
   },
   {
     id: "5ij",
@@ -40,5 +48,7 @@ export const plantList = [
     cover: monstera,
     light: 3,
     water: 1,
+    price: 19,
+    quantity: 3,
   },
 ];
