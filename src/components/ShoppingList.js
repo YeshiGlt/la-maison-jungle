@@ -9,7 +9,7 @@ function ShoppingList({ cart, updateCart }) {
     []
   );
 
-  function addToCart(name, price) {
+  function addToCart(id, name, price) {
     const currentPlantAdded = cart.find((plant) => plant.name === name);
     if (currentPlantAdded) {
       const cartFilteredCurrentPlant = cart.filter(
@@ -17,10 +17,10 @@ function ShoppingList({ cart, updateCart }) {
       );
       updateCart([
         ...cartFilteredCurrentPlant,
-        { name, price, quantity: currentPlantAdded.quantity + 1 },
+        { id, name, price, quantity: currentPlantAdded.quantity + 1 },
       ]);
     } else {
-      updateCart([...cart, { name, price, quantity: 1 }]);
+      updateCart([...cart, { id, name, price, quantity: 1 }]);
     }
   }
 
@@ -41,7 +41,7 @@ function ShoppingList({ cart, updateCart }) {
               water={water}
               light={light}
             />
-            <button onClick={() => addToCart(name, price)}>Ajouter</button>
+            <button onClick={() => addToCart(id, name, price)}>Ajouter</button>
           </div>
         ))}
       </ul>
