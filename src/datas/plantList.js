@@ -24,7 +24,7 @@ export const plantList = [
   {
     id: "3ef",
     name: "pothos argenté",
-    category: "extérieur",
+    category: "intérieur",
     cover: monstera,
     light: 3,
     water: 3,
@@ -34,7 +34,7 @@ export const plantList = [
   {
     id: "4gh",
     name: "yucca",
-    category: "intérieur",
+    category: "grimpante",
     cover: monstera,
     light: 1,
     water: 2,
