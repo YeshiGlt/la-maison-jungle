@@ -4,12 +4,10 @@ import Cart from "./Cart";
 import ShoppingList from "./ShoppingList";
 import Footer from "./Footer";
 import logo from "../assets/logo.png";
-import Categories from "./Categories";
 
 function App() {
   const title = "La maison jungle";
   const [cart, updateCart] = useState([]);
-  const [list, updateList] = useState([]);
 
   return (
     <React.Fragment>
@@ -19,12 +17,7 @@ function App() {
       </Banner>
       <div>
         <Cart cart={cart} updateCart={updateCart} />
-        <ShoppingList
-          cart={cart}
-          updateCart={updateCart}
-          list={list}
-          updateList={updateList}
-        />
+        <ShoppingList cart={cart} updateCart={updateCart} />
       </div>
       <Footer />
     </React.Fragment>
