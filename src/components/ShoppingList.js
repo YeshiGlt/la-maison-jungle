@@ -8,7 +8,7 @@ function ShoppingList({ cart, updateCart }) {
   const categoriesPlant = plantList.reduce(
     (nP1, plant) =>
       nP1.includes(plant.category) ? nP1 : nP1.concat(plant.category),
-    []
+    [] // Permet de comparer l'élem suivant avec le précédent au sein du tableau (avec l'accumulator) + concat pour éviter les doublons de catégories
   );
 
   const [categoryValue, setCategory] = useState("");
@@ -53,20 +53,27 @@ function ShoppingList({ cart, updateCart }) {
       <ul className="lmj-plant-list">
         {plantList
           .filter((plant) => plant.category.includes(categoryValue)) // Récupère pour afficher toutes les plantes qui contiennent la catégorie en question
-          .map(({ id, cover, name, water, light, price }) => (
-            <div key={id}>
-              <PlantItem
-                id={id}
-                cover={cover}
-                name={name}
-                water={water}
-                light={light}
-              />
-              <button onClick={() => addToCart(id, name, price)}>
-                Ajouter
-              </button>
-            </div>
-          ))}
+          .map(
+            (
+              { id, cover, name, water, light, price } // Permet de parcourir un tableau (avec une durée déjà définie contrairement au boucle for par ex)
+            ) => (
+              <div key={id}>
+                <PlantItem
+                  id={id}
+                  cover={cover}
+                  name={name}
+                  water={water}
+                  light={light}
+                />
+                <button
+                  onClick={() => addToCart(id, name, price)}
+                  className="lmj-plant-button"
+                >
+                  Ajouter
+                </button>
+              </div>
+            )
+          )}
       </ul>
     </div>
   );
