@@ -9,3 +9,33 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.lmj-plant-list > div {
+  display: grid;
+}
+
+.lmj-plant-button {
+  background: none;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: self-start;
+  padding: 0;
+  color: black;
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 1024px) {
+  .lmj-shopping-list {
+    width: 100%;
+  }
+
+  .lmj-plant-list {
+    list-style-type: none;
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
