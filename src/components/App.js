@@ -9,6 +9,8 @@ import "../styles/Layout.css";
 function App() {
   const title = "La maison jungle";
   const [cart, updateCart] = useState([]);
+  const [categoryValue, setCategory] = useState("");
+  const [isFooterShown, updateIsFooterShown] = useState(true);
 
   return (
     <div>
@@ -17,10 +19,24 @@ function App() {
         <h1 className="lmj-title">{title}</h1>
       </Banner>
       <div className="lmj-layout-inner">
-        <Cart cart={cart} updateCart={updateCart} />
-        <ShoppingList cart={cart} updateCart={updateCart} />
+        <Cart
+          cart={cart}
+          updateCart={updateCart}
+          categoryValue={categoryValue}
+          setCategory={setCategory}
+        />
+        <ShoppingList
+          cart={cart}
+          updateCart={updateCart}
+          categoryValue={categoryValue}
+          setCategory={setCategory}
+        />
       </div>
-      <Footer />
+      {/* Cacher ou montrer le footer */}
+      <button onClick={() => updateIsFooterShown(!isFooterShown)}>
+        Cacher !
+      </button>
+      {isFooterShown && <Footer cart={cart} />}
     </div>
   );
 }
