@@ -11,8 +11,16 @@ function App() {
   const [categoryValue, setCategory] = useState("");
   const [isFooterShown, updateIsFooterShown] = useState(true);
   const [cart, updateCart] = useState([]);
+
   // Renvoie/Lis les données enregistrées, soit items correspondant aux articles ajoutés dans cart
-  const savedData = JSON.parse(localStorage.getItem("items"));
+  let savedData = localStorage.getItem("items"); // let : droit de changer sa valeur | vs | const : pas le droit de changer sa valeur
+
+  try {
+    // Test s'il y a une erreur
+    savedData = JSON.parse(localStorage.getItem("items")); // Si pas d'erreur, converti du text en JSON
+  } catch (error) {
+    savedData = []; // S'il y a une erreur il passe sur le catch
+  }
 
   useEffect(() => {
     // Si savedData existe alors ..
