@@ -1,8 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Footer.css";
 
-function Footer() {
+function Footer({ cart }) {
   const [inputValue, setInputValue] = useState("");
+
+  // useEffect(() => {
+  //   console.log(`1️⃣ Cette alerte s'affiche à chaque rendu`);
+  // });
+
+  // useEffect(() => {
+  //   console.log(`2️⃣ Cette alerte s'affiche au premier rendu`);
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(
+  //     `3️⃣ Cette alerte s'affiche la première fois et dès que le panier est mis à jour`
+  //   );
+  // }, [cart]);
+
+  // Déclencher un effet quand l'élément est retiré du DOM
+  // useEffect(() => {
+  //   return () =>
+  //     console.log(`4️⃣ Cette alerte s'affiche quand Footer est retiré du DOM`);
+  // }, [cart]);
 
   function inputOnBlur() {
     if (!inputValue.includes("@")) {

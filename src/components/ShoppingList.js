@@ -1,17 +1,14 @@
-import { useState } from "react";
 import { plantList } from "../datas/plantList";
 import "../styles/ShoppingList.css";
 import PlantItem from "./PlantItem";
 import Categories from "./Categories";
 
-function ShoppingList({ cart, updateCart }) {
+function ShoppingList({ cart, updateCart, categoryValue, setCategory }) {
   const categoriesPlant = plantList.reduce(
     (nP1, plant) =>
       nP1.includes(plant.category) ? nP1 : nP1.concat(plant.category),
     [] // Permet de comparer l'élem suivant avec le précédent au sein du tableau (avec l'accumulator) + concat pour éviter les doublons de catégories
   );
-
-  const [categoryValue, setCategory] = useState("");
 
   function addToCart(id, name, price) {
     const currentPlantAdded = cart.find((plant) => plant.name === name);
