@@ -3,32 +3,14 @@ import "../styles/Cart.css";
 
 function Cart({ cart, updateCart, categoryValue, setCategory }) {
   const [isOpen, setIsOpen] = useState(true);
-
-  //////////////////////////////////////////////////
-
-  const items = Object.keys(cart);
-  const total = items.reduce(
-    (nP1, item) => nP1 + cart[item].quantity * cart[item].price,
+  const total = cart.reduce(
+    (nP1, plantType) => nP1 + plantType.quantity * plantType.price,
     0
   );
 
   useEffect(() => {
     document.title = `LMJ: ${total}€ d'achats`;
   }, [total]);
-
-  useEffect(() => {
-    localStorage.setItem("items", items);
-    JSON.stringify(localStorage.setItem("items", items));
-  }, [items]);
-
-  useEffect(() => {
-    if (items === true) {
-      localStorage.getItem("items");
-      JSON.parse(localStorage.getItem("items"));
-    }
-  }, [items]);
-
-  //////////////////////////////////////////////////
 
   function deletePlant(name) {
     const currentPlantDeleted = cart.find((plant) => plant.name === name); // Récupére la plante via le nom de la plante - Nature de l'élem : Plant{ name, price, quantity }

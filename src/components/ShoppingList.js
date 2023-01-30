@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { plantList } from "../datas/plantList";
 import "../styles/ShoppingList.css";
 import PlantItem from "./PlantItem";
